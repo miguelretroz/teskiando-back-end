@@ -10,7 +10,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
