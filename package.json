@@ -2,7 +2,7 @@
   "name": "teskiando-back-end",
   "version": "1.0.0",
   "description": "App for organizaing tasks - Back-end",
-  "main": "index.js",
+  "main": "src/api/server.js",
   "lint-staged": {
     "*.js": [
       "npm run lint"
