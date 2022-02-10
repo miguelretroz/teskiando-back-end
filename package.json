@@ -1,0 +1,37 @@
+{
+  "name": "teskiando-back-end",
+  "version": "1.0.0",
+  "description": "App for organizaing tasks - Back-end",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelRetroz/teskiando-back-end.git"
+  },
+  "keywords": [
+    "todo",
+    "task",
+    "tasks",
+    "organisation"
+  ],
+  "author": "Miguel Retroz <contato.miguelretroz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiguelRetroz/teskiando-back-end/issues"
+  },
+  "homepage": "https://github.com/MiguelRetroz/teskiando-back-end#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
