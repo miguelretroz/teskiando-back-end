@@ -4,7 +4,8 @@
   "description": "App for organizaing tasks - Back-end",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,9 @@
     "@commitlint/config-conventional": "^16.0.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.8.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "eslint-plugin-sonarjs": "^0.11.0",
     "husky": "^7.0.4"
   },
   "config": {
