@@ -9,6 +9,10 @@ router.post(
   userMiddlewares.create,
   require('./create'),
 );
-router.post('/login', require('./login'));
+router.post(
+  '/login',
+  userMiddlewares.login,
+  require('./login'),
+);
 
 module.exports = router;
