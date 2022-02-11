@@ -5,5 +5,10 @@ module.exports = (err, _req, res, _next) => {
 
   if (err.isJoi) return res.status(UNPROCESSABLE_ENTITY).json({ message: err.message });
 
+  if (err.statusCode) {
+    const { statusCode, message } = err;
+    return res.status(statusCode).json({ message });
+  }
+
   res.status(500).json({ message: 'Internal Server Error' });
 };
