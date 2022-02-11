@@ -7,7 +7,15 @@ module.exports = rescue(
   async (req, res) => {
     const { email, password } = req.body;
 
-    const token = await userServices.login({ email, password });
+    const { refreshToken, token } = await userServices.login({ email, password });
+
+    res.cookie('refreshToken', refreshToken.id, {
+      sameSite: 'strict',
+      path: '/',
+      expires: new Date(refreshToken.expiresIn),
+      httpOnly: true,
+      secure: true,
+    });
 
     res.status(OK).json({ token });
   },

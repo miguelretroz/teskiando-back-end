@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 
-const { userModels } = require('../../models');
+const { userModels, refreshTokenModels } = require('../../models');
 const { apiError, creators } = require('../../errors');
 
 module.exports = async ({ email, password }) => {
@@ -12,5 +12,9 @@ module.exports = async ({ email, password }) => {
 
   if (!passwordIsCorrect) return apiError(creators.incorrect('Senha'));
 
-  return 'token';
+  const { _id } = user;
+
+  const refreshToken = await refreshTokenModels.create(_id);
+
+  return { refreshToken, token: 'token' };
 };
