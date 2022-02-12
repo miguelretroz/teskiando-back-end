@@ -9,7 +9,10 @@ router.post(
   userMiddlewares.create,
   require('./create'),
 );
-
-router.get('/oi', (req, res) => res.status(200).json({ message: 'oi' }));
+router.post(
+  '/login',
+  userMiddlewares.login,
+  require('./login'),
+);
 
 module.exports = router;
