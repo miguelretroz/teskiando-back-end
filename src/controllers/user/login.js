@@ -9,14 +9,16 @@ module.exports = rescue(
 
     const { refreshToken, token } = await userServices.login({ email, password });
 
-    res.cookie('refreshToken', refreshToken.id, {
+    res
+    .status(OK)
+    .cookie('refreshToken', refreshToken.id, {
       sameSite: 'strict',
       path: '/',
       expires: new Date(refreshToken.expiresIn),
       httpOnly: true,
       secure: true,
-    });
-
-    res.status(OK).json({ token });
+      signed: true,
+    })
+    .json({ token });
   },
 );
