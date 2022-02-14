@@ -12,4 +12,6 @@ router.post(
   require('./create'),
 );
 
+router.get('/list', require('./getByUserId'));
+
 module.exports = router;
