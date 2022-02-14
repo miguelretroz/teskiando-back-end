@@ -1,8 +1,10 @@
 const express = require('express');
 
-const { taskMiddlewares } = require('../../middlewares');
+const { taskMiddlewares, userMiddlewares } = require('../../middlewares');
 
 const router = express.Router({ mergeParams: true });
+
+router.use(userMiddlewares.auth);
 
 router.post(
   '/register',
