@@ -4,9 +4,9 @@ const { taskValidations } = require('../../validations');
 
 module.exports = rescue(
   (req, _res, next) => {
-    const { title } = req.body;
+    const { title, status } = req.body;
 
-    const { error } = taskValidations.create.validate({ title });
+    const { error } = taskValidations.create.validate({ title, status });
 
     if (error) return next(error);
 

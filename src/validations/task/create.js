@@ -9,5 +9,9 @@ module.exports = Joi.object({
     'string.empty': defaultMessages.REQUIRED('Título'),
     'any.required': defaultMessages.REQUIRED('Título'),
   }),
-  status: Joi.string().pattern(regex.status),
+  status: Joi.string().pattern(regex.status).messages({
+    'string.base': defaultMessages.INCORRECT_TYPE('Status', 'string'),
+    'string.empty': 'Status não pode ser vazio',
+    'string.pattern.base': 'Status de ser: "A fazer" ou "Em progresso" ou "Concluído"',
+  }),
 });
