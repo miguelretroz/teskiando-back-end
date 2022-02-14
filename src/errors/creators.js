@@ -20,3 +20,8 @@ module.exports.incorrect = (entity) => ({
   statusCode: UNAUTHORIZED,
   message: defaultMessages.INCORRECT(entity),
 });
+
+module.exports.unauthorized = (entity) => ({
+  statusCode: UNAUTHORIZED,
+  message: defaultMessages.UNAUTHORIZED(entity),
+});
