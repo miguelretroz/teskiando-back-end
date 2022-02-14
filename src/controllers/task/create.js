@@ -5,7 +5,8 @@ const { taskServices } = require('../../services');
 
 module.exports = rescue(
   async (req, res) => {
-    const { userId, title } = req.body;
+    const { title } = req.body;
+    const { id: userId } = req.user;
 
     await taskServices.create({ userId, title });
 
