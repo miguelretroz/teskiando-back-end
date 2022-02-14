@@ -9,8 +9,6 @@ module.exports = rescue(
     const { id: userId } = req.user;
     const { title, status } = req.body;
 
-    console.log(id);
-
     await taskServices.update(userId, id, { title, status });
 
     res.status(OK).end();
