@@ -7,3 +7,5 @@ module.exports.PASSWORDS_MUST_BE_EQUAL = () => 'As senhas devem ser iguais';
 module.exports
   .NOT_FOUND = (key) => `${key} não encontrad${key[-1] === 'a' ? 'a' : 'o'}`;
 module.exports.INCORRECT = (key) => `${key} incorret${key[key.length - 1] === 'a' ? 'a' : 'o'}`;
+module.exports
+  .UNAUTHORIZED = (key) => `${key} não autorizad${key[key.length - 1] === 'a' ? 'a' : 'o'}`;
