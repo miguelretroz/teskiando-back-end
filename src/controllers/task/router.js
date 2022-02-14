@@ -13,6 +13,10 @@ router.post(
 );
 
 router.get('/list', require('./getByUserId'));
-router.put('/edit/:id', require('./update'));
+router.put(
+  '/edit/:id',
+  taskMiddlewares.update,
+  require('./update'),
+);
 
 module.exports = router;
