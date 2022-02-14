@@ -13,5 +13,6 @@ router.post(
 );
 
 router.get('/list', require('./getByUserId'));
+router.put('/edit/:id', require('./update'));
 
 module.exports = router;
