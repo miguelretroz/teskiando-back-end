@@ -1,11 +1,9 @@
-const { userModels, taskModels } = require('../../models');
+const { taskModels } = require('../../models');
 
-const { apiError, creators } = require('../../errors');
+const { userExists } = require('./utils');
 
 module.exports = async (userId) => {
-  const user = await userModels.getById(userId);
-
-  if (!user) return apiError(creators.notFound('Usuário'));
+  await userExists(userId);
 
   return taskModels.getByUserId(userId);
 };
