@@ -8,8 +8,8 @@ module.exports = rescue(
     const { title } = req.body;
     const { id: userId } = req.user;
 
-    await taskServices.create({ userId, title });
+    const task = await taskServices.create({ userId, title });
 
-    res.status(CREATED).end();
+    res.status(CREATED).json({ task });
   },
 );

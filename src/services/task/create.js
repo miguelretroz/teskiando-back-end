@@ -5,5 +5,5 @@ const { userExists } = require('./utils');
 module.exports = async ({ userId, title, status = 'A fazer' }) => {
   await userExists(userId);
 
-  await taskModels.create({ userId, title, status });
+  return taskModels.create({ userId, title, status });
 };
