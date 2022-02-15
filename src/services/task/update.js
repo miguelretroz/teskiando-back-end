@@ -12,5 +12,5 @@ module.exports = async (userId, taskId, { title, status }) => {
   if (title !== undefined && title !== '') newData.title = title;
   if (status !== undefined && status !== '') newData.status = status;
 
-  await taskModels.update(taskId, newData);
+  return taskModels.update(taskId, newData);
 };
