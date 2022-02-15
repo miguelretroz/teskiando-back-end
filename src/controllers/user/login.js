@@ -12,7 +12,7 @@ module.exports = rescue(
     res
     .status(OK)
     .cookie('refreshToken', refreshToken.id, {
-      sameSite: 'strict',
+      sameSite: 'none',
       path: '/',
       expires: new Date(refreshToken.expiresIn),
       httpOnly: true,
