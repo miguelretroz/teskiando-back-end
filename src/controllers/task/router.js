@@ -18,5 +18,6 @@ router.put(
   taskMiddlewares.update,
   require('./update'),
 );
+router.delete('/remove/:id', require('./remove'));
 
 module.exports = router;
