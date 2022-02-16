@@ -10,7 +10,11 @@ app.use(express.json());
 app.use(cookieParser(COOKIE_SECRET));
 
 const corsConfig = {
-  origin: 'http://localhost:3000',
+  origins: [
+    'http://localhost:3000',
+    'https://teskiando.vercel.app',
+    'https://teskiando-miguelretroz.vercel.app',
+  ],
   credentials: true,
 };
 
