@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const { userModels, refreshTokenModels } = require('../../models');
 const { apiError, creators } = require('../../errors');
 
-const { JWT_SECRET_KEY } = process.env;
+const { JWT_SECRET_KEY, ACCESS_TOKEN_EXPIRY } = process.env;
 
 module.exports = async ({ email, password }) => {
   const user = await userModels.getByEmail(email);
@@ -19,7 +19,11 @@ module.exports = async ({ email, password }) => {
 
   const refreshToken = await refreshTokenModels.create(_id);
 
-  const token = jwt.sign({ sub: _id, name, email }, JWT_SECRET_KEY, { expiresIn: 15 * 60 });
+  const token = jwt.sign(
+    { sub: _id, name, email },
+    JWT_SECRET_KEY,
+    { expiresIn: parseInt(ACCESS_TOKEN_EXPIRY, 10) },
+  );
 
   return { refreshToken, token };
 };
