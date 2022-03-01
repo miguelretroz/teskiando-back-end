@@ -7,4 +7,4 @@ module.exports.email = new RegExp(
   ].join(''),
 );
 
-module.exports.password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*()-+_={}[\]~^?]).{8,}$/;
+module.exports.password = /^.{8,}$/;
