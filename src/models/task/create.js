@@ -1,4 +1,5 @@
 const connection = require('../connection');
+const serializer = require('./serializer');
 
 module.exports = async ({ userId, title, status }) => {
   const collection = await (await connection()).collection('tasks');
@@ -13,5 +14,5 @@ module.exports = async ({ userId, title, status }) => {
     updatedAt: createdAt,
   });
 
-  return { _id: insertedId, userId, title, status, createdAt, updatedAt: createdAt };
+  return serializer({ _id: insertedId, userId, title, status, createdAt, updatedAt: createdAt });
 };
