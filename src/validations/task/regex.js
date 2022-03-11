@@ -1,1 +1,1 @@
-module.exports.status = /^(A fazer|Em progresso|Concluído)$/;
+module.exports.status = /^(toDo|inProgress|finished)$/;
