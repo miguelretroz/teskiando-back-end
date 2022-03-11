@@ -12,6 +12,6 @@ module.exports = Joi.object({
   status: Joi.string().pattern(regex.status).messages({
     'string.base': defaultMessages.INCORRECT_TYPE('Status', 'string'),
     'string.empty': 'Status não pode ser vazio',
-    'string.pattern.base': 'Status de ser: "A fazer" ou "Em progresso" ou "Concluído"',
+    'string.pattern.base': 'Status de ser: "toDo" ou "inProgress" ou "finished"',
   }),
 });
