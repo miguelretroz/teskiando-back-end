@@ -7,9 +7,9 @@ module.exports = rescue(
   async (req, res) => {
     const { id } = req.params;
     const { id: userId } = req.user;
-    const { title, status } = req.body;
+    const { title, status, description } = req.body;
 
-    const task = await taskServices.update(userId, id, { title, status });
+    const task = await taskServices.update(userId, id, { title, status, description });
 
     res.status(OK).json({ task });
   },

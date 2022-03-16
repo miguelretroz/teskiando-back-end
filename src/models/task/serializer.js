@@ -3,6 +3,7 @@ module.exports = ({
   userId,
   title,
   status,
+  description,
   createdAt,
   updatedAt, 
 }) => ({
@@ -10,6 +11,7 @@ module.exports = ({
   userId,
   title,
   status,
+  description,
   createdAt,
   updatedAt, 
 });
