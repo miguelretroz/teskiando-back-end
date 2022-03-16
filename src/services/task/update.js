@@ -2,15 +2,14 @@ const { taskModels } = require('../../models');
 
 const { userExists, taskExists } = require('./utils');
 
-module.exports = async (userId, taskId, { title, status }) => {
+module.exports = async (userId, taskId, { title, status, description }) => {
   await userExists(userId);
 
   const task = await taskExists(userId, taskId);
 
-  const newData = { title: task.title, status: task.status };
+  if (title) task.title = title;
+  if (status) task.status = status;
+  if (description) task.description = description;
 
-  if (title !== undefined && title !== '') newData.title = title;
-  if (status !== undefined && status !== '') newData.status = status;
-
-  return taskModels.update(taskId, newData);
+  return taskModels.update(taskId, task);
 };
