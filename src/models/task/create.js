@@ -1,7 +1,7 @@
 const connection = require('../connection');
 const serializer = require('./serializer');
 
-module.exports = async ({ userId, title, status }) => {
+module.exports = async ({ userId, title, status = 'toDo', description = '' }) => {
   const collection = await (await connection()).collection('tasks');
 
   const createdAt = new Date().toISOString();
@@ -10,9 +10,12 @@ module.exports = async ({ userId, title, status }) => {
     userId,
     title,
     status,
+    description,
     createdAt,
     updatedAt: createdAt,
   });
 
-  return serializer({ _id: insertedId, userId, title, status, createdAt, updatedAt: createdAt });
+  return serializer(
+    { _id: insertedId, userId, title, status, description, createdAt, updatedAt: createdAt },
+  );
 };
