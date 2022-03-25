@@ -18,5 +18,62 @@
       "description": "Local"
     }
   ],
-  "schemas": ["https", "http"]
+  "schemas": ["https", "http"],
+  "paths": {
+    "/ping": {
+      "get": {
+        "summary": "Testa a conexão com o servidor",
+        "description": "Rota para testar a conexão com o servidor",
+        "tags": ["Ping"],
+        "responses": {
+          "200": {
+            "description": "Pong",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/Ping/200"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/Errors/500"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "Ping": {
+        "200": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "example": "Pong"
+            }
+          }
+        }
+      },
+      "Errors": {
+        "500": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "example": "Internal Server Error"
+            }
+          }
+        }
+      }
+    }
+  }
 }
