@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "https://teksiando-api.herokuapp.com",
+      "url": "https://teskiando-api.herokuapp.com",
       "description": "Produção"
     },
     {
