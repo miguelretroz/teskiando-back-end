@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Téskiando Api",
+    "description": "Api do app Téskiando, que tem como objetivo ajudar usuários a gerenciar tarefas de maneira fácil e rápida.",
+    "contact": {
+      "email": "contato.miguelretroz@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "Local"
+    },
+    {
+      "url": "https://teksiando-api.herokuapp.com",
+      "description": "Produção"
+    }
+  ],
+  "schemas": ["https", "http"]
+}

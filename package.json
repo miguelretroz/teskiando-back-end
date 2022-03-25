@@ -58,6 +58,7 @@
     "http-status-codes": "^2.2.0",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "^4.3.1"
+    "mongodb": "^4.3.1",
+    "swagger-ui-express": "^4.3.0"
   }
 }
