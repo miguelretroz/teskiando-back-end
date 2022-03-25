@@ -10,12 +10,12 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3001",
-      "description": "Local"
-    },
-    {
       "url": "https://teksiando-api.herokuapp.com",
       "description": "Produção"
+    },
+    {
+      "url": "http://localhost:3001",
+      "description": "Local"
     }
   ],
   "schemas": ["https", "http"]
