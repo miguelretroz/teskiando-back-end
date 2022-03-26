@@ -103,6 +103,21 @@
           }
         }
       }
+    },
+    "/task/register": {
+      "post": {
+        "summary": "Registro de nova tarefa",
+        "description": "Rota para registro de novas tarefas baseado no id do usuário",
+        "tags": ["Task"],
+        "security": [
+          {
+            "accessToken": []
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/Task/Register"
+        }
+      }
     }
   },
   "components": {
@@ -164,6 +179,26 @@
                   }
                 },
                 "required": ["email", "password"]
+              }
+            }
+          }
+        }
+      },
+      "Task": {
+        "Register": {
+          "description": "Dados para registro de nova tarefa",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "Comprar pão"
+                  }
+                },
+                "required": ["title"]
               }
             }
           }
