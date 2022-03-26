@@ -107,7 +107,7 @@
     "/task/register": {
       "post": {
         "summary": "Registro de nova tarefa",
-        "description": "Rota para registro de novas tarefas baseado no id do usuário",
+        "description": "Rota para registro de novas tarefas baseado no id do usuário (O id do usuário é pego do token).",
         "tags": ["Task"],
         "security": [
           {
@@ -121,8 +121,16 @@
     },
     "/task/list": {
       "get": {
-        "summary": "Listage de tarefas do usuário",
-        "description": "Rota para listagem das tarefas de um usuário",
+        "summary": "Listagem de tarefas do usuário",
+        "description": "Rota para listagem das tarefas de um usuário (O id do usuário é pego do token).",
+        "tags": ["Task"],
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
         "tags": ["Task"],
         "security": [
           {
