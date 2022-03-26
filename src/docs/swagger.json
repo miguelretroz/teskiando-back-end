@@ -266,7 +266,7 @@
       },
       "Errors": {
         "500": {
-          "description": "Internal Server Error",
+          "description": "Erro interno do servidor",
           "content": {
             "application/json": {
               "schema": {
