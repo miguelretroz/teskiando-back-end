@@ -48,9 +48,86 @@
           }
         }
       }
+    },
+    "/user/register": {
+      "post": {
+        "summary": "Registro de usuário",
+        "description": "Rota para registro novos usuários",
+        "tags": ["User"],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/User/Register"
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso"
+          },
+          "409": {
+            "description": "Email já registrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/User/Register/409"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/User/Register/422"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/Errors/500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
+    "requestBodies": {
+      "User": {
+        "Register": {
+          "description": "Dados do usuário",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Anakin Skywalker"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "anakin.skywalker@email.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "12345678"
+                  }
+                },
+                "required": ["name", "email", "password"]
+              }
+            }
+          }
+        }
+      }
+    },
     "responses": {
       "Ping": {
         "200": {
@@ -59,6 +136,38 @@
             "message": {
               "type": "string",
               "example": "Pong"
+            }
+          }
+        }
+      },
+      "User": {
+        "Register": {
+          "409": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string",
+                "example": "Email já registrado"
+              }
+            }
+          },
+          "422": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string",
+                "examples": [
+                  "Nome é obrigatório",
+                  "Nome deve ter 3 ou mais caracteres",
+                  "Nome deve ser \"string\"",
+                  "Email é obrigatório",
+                  "Email no formato incorreto",
+                  "Email deve ser \"string\"",
+                  "Senha é obrigatório",
+                  "Senha no formato incorreto",
+                  "Senha deve ser \"string\""
+                ]
+              }
             }
           }
         }
