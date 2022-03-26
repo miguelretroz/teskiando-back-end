@@ -87,6 +87,20 @@
         "tags": ["User"],
         "requestBody": {
           "$ref": "#/components/requestBodies/User/Login"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/User/Login/200"
+          },
+          "404": {
+            "$ref": "#/components/responses/User/Login/404"
+          },
+          "422": {
+            "$ref": "#/components/responses/User/Login/422"
+          },
+          "500": {
+            "$ref": "#/components/responses/Errors/500"
+          }
         }
       }
     }
@@ -187,6 +201,64 @@
                   "Senha no formato incorreto",
                   "Senha deve ser \"string\""
                 ]
+              }
+            }
+          }
+        },
+        "Login": {
+          "200": {
+            "description": "Login realizado com sucesso e token gerado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "format": "JWT",
+                      "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjNlNjlkMGNkYjY4NTNkMTg0NDcyMzAiLCJuYW1lIjoiQW5ha2luIFNreXdhbGtlciIsImVtYWlsIjoiYW5ha2luLnNreXdhbGtlckBlbWFpbC5jb20iLCJpYXQiOjE2NDgyNjgyNDksImV4cCI6MTY0ODg3MzA0OX0.2ridzyLoA1oPOh-58xYwYqsJzAYv_sA4OjZq4DE7mV4"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Usuário não encontrado"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Erros gerados na validação dos dados enviados no body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "examples": [
+                        "Email é obrigatório",
+                        "Email no formato incorreto",
+                        "Email deve ser \"string\"",
+                        "Senha é obrigatório",
+                        "Senha no formato incorreto",
+                        "Senha deve ser \"string\""
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
