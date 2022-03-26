@@ -118,6 +118,18 @@
           "$ref": "#/components/requestBodies/Task/Register"
         }
       }
+    },
+    "/task/list": {
+      "get": {
+        "summary": "Listage de tarefas do usuário",
+        "description": "Rota para listagem das tarefas de um usuário",
+        "tags": ["Task"],
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
     }
   },
   "components": {
