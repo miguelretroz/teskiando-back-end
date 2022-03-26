@@ -131,12 +131,31 @@
         ]
       }
     },
+    "/task/edit/{taskId}": {
+      "put": {
+        "summary": "Edição de tarefa",
+        "description": "Rota para editação de tarefas",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "description": "Id da tarefa a ser editada",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "623ed07abb1c59e0ec9f85ae"
+            }
+          }
+        ],
         "tags": ["Task"],
         "security": [
           {
             "accessToken": []
           }
-        ]
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/Task/Edit"
+        }
       }
     }
   },
@@ -219,6 +238,63 @@
                   }
                 },
                 "required": ["title"]
+              }
+            }
+          }
+        },
+        "Edit": {
+          "description": "Dados para edição de tarefa, é possível alterar o titulo, descrição e status nesta rota",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string",
+                    "format": " toDo, inProgress, finished"
+                  }
+                }
+              },
+              "examples": {
+                "apenas titulo": {
+                  "value": {
+                    "title": "Comprar pão"
+                  }
+                },
+                "apenas descrição": {
+                  "value": {
+                    "description": "Ir comprar pão na padaria"
+                  }
+                },
+                "apenas status para \"A fazer\"": {
+                  "value": {
+                    "status": "toDo"
+                  }
+                },
+                "apenas status para \"Em progresso\"": {
+                  "value": {
+                    "status": "inProgress"
+                  }
+                },
+                "apenas status para \"Concluído\"": {
+                  "value": {
+                    "status": "finished"
+                  }
+                },
+                "todos os campos": {
+                  "value": {
+                    "title": "Comprar pão",
+                    "description": "Ir comprar pão na padaria",
+                    "status": "inProgress"
+                  }
+                }
               }
             }
           }
