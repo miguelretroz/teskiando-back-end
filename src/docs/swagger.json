@@ -157,6 +157,30 @@
           "$ref": "#/components/requestBodies/Task/Edit"
         }
       }
+    },
+    "/task/remove/{taskId}": {
+      "delete": {
+        "summary": "Remoção de tarefa",
+        "description": "Rota para remoção de tarefas",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "description": "Id da tarefa a ser removida",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "623ed07abb1c59e0ec9f85ae"
+            }
+          }
+        ],
+        "tags": ["Task"],
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
     }
   },
   "components": {
