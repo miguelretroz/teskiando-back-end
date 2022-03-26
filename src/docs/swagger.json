@@ -72,7 +72,7 @@
             }
           },
           "422": {
-            "description": "",
+            "description": "Erros de validação do body",
             "content": {
               "application/json": {
                 "schema": {
