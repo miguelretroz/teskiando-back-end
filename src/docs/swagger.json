@@ -93,6 +93,16 @@
           }
         }
       }
+    },
+    "/user/login": {
+      "post": {
+        "summary": "Login de usuário",
+        "description": "Rota para login de usuário",
+        "tags": ["User"],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/User/Login"
+        }
+      }
     }
   },
   "components": {
@@ -122,6 +132,30 @@
                   }
                 },
                 "required": ["name", "email", "password"]
+              }
+            }
+          }
+        },
+        "Login": {
+          "description": "Dados do usuário",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "anakin.skywalker@email.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "12345678"
+                  }
+                },
+                "required": ["email", "password"]
               }
             }
           }
