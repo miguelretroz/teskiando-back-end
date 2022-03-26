@@ -233,17 +233,23 @@
                 "type": "object",
                 "properties": {
                   "title": {
-                    "type": "string",
-                    "example": "Comprar pão"
+                    "type": "string"
                   }
                 },
                 "required": ["title"]
+              },
+              "examples": {
+                "apenas título": {
+                  "value": {
+                    "title": "Comprar pão"
+                  }
+                }
               }
             }
           }
         },
         "Edit": {
-          "description": "Dados para edição de tarefa, é possível alterar o titulo, descrição e status nesta rota",
+          "description": "Dados para edição de tarefa, é possível alterar o título, descrição e status nesta rota",
           "required": true,
           "content": {
             "application/json": {
@@ -263,7 +269,7 @@
                 }
               },
               "examples": {
-                "apenas titulo": {
+                "apenas título": {
                   "value": {
                     "title": "Comprar pão"
                   }
