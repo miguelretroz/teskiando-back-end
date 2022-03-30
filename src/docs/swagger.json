@@ -118,6 +118,16 @@
           "$ref": "#/components/requestBodies/Task/Register"
         },
         "responses": {
+          "200": {
+            "description": "Tarefa criada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/Task/401"
           },
