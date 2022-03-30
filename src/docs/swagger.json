@@ -228,6 +228,46 @@
     }
   },
   "components": {
+    "schemas": {
+      "Task": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "ObjectId",
+            "example": "623ed07abb1c59e0ec9f85ae"
+          },
+          "userId": {
+            "type": "string",
+            "format": "ObjectId",
+            "example": "623ed07abb1c59e0ec9f85ae"
+          },
+          "title": {
+            "type": "string",
+            "example": "Comprar pão"
+          },
+          "status": {
+            "type": "string",
+            "format": " toDo, inProgress, finished",
+            "example": "toDo"
+          },
+          "description": {
+            "type": "string",
+            "example": "Comprar pão para o dia de hoje"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2022-03-26T19:00:00.000Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2022-03-27T12:30:14.710Z"
+          }
+        }
+      }
+    },
     "securitySchemes": {
       "accessToken": {
         "type": "http",
