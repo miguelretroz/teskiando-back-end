@@ -247,6 +247,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Tarefa removida com sucesso"
+          },
           "401": {
             "$ref": "#/components/responses/Task/Modify/401"
           },
