@@ -70,6 +70,53 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/responses/User/Register/422"
+                },
+                "examples": {
+                  "Nome é obrigatório": {
+                    "value": {
+                      "message": "Nome é obrigatório"
+                    }
+                  },
+                  "Nome deve ter 3 ou mais caracteres": {
+                    "value": {
+                      "message": "Nome deve ter 3 ou mais caracteres"
+                    }
+                  },
+                  "Nome deve ser \"string\"": {
+                    "value": {
+                      "message": "Nome deve ser \"string\""
+                    }
+                  },
+                  "Email é obrigatório": {
+                    "value": {
+                      "message": "Email é obrigatório"
+                    }
+                  },
+                  "Email no formato incorreto": {
+                    "value": {
+                      "message": "Email no formato incorreto"
+                    }
+                  },
+                  "Email deve ser \"string\"": {
+                    "value": {
+                      "message": "Email deve ser \"string\""
+                    }
+                  },
+                  "Senha é obrigatória": {
+                    "value": {
+                      "message": "Senha é obrigatória"
+                    }
+                  },
+                  "Senha no formato incorreto": {
+                    "value": {
+                      "message": "Senha no formato incorreto"
+                    }
+                  },
+                  "Senha deve ser \"string\"": {
+                    "value": {
+                      "message": "Senha deve ser \"string\""
+                    }
+                  }
                 }
               }
             }
@@ -478,18 +525,7 @@
             "type": "object",
             "properties": {
               "message": {
-                "type": "string",
-                "examples": [
-                  "Nome é obrigatório",
-                  "Nome deve ter 3 ou mais caracteres",
-                  "Nome deve ser \"string\"",
-                  "Email é obrigatório",
-                  "Email no formato incorreto",
-                  "Email deve ser \"string\"",
-                  "Senha é obrigatório",
-                  "Senha no formato incorreto",
-                  "Senha deve ser \"string\""
-                ]
+                "type": "string"
               }
             }
           }
