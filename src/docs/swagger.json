@@ -116,6 +116,11 @@
         ],
         "requestBody": {
           "$ref": "#/components/requestBodies/Task/Register"
+        },
+        "responses": {
+          "500": {
+            "$ref": "#/components/responses/Errors/500"
+          }
         }
       }
     },
@@ -128,7 +133,12 @@
           {
             "accessToken": []
           }
-        ]
+        ],
+        "responses": {
+          "500": {
+            "$ref": "#/components/responses/Errors/500"
+          }
+        }
       }
     },
     "/task/edit/{taskId}": {
@@ -155,6 +165,11 @@
         ],
         "requestBody": {
           "$ref": "#/components/requestBodies/Task/Edit"
+        },
+        "responses": {
+          "500": {
+            "$ref": "#/components/responses/Errors/500"
+          }
         }
       }
     },
@@ -179,7 +194,12 @@
           {
             "accessToken": []
           }
-        ]
+        ],
+        "responses": {
+          "500": {
+            "$ref": "#/components/responses/Errors/500"
+          }
+        }
       }
     }
   },
