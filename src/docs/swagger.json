@@ -22,7 +22,7 @@
   "paths": {
     "/ping": {
       "get": {
-        "summary": "Testa a conexão com o servidor",
+        "summary": "Teste de conexão com o servidor",
         "description": "Rota para testar a conexão com o servidor",
         "tags": ["Ping"],
         "responses": {
