@@ -202,6 +202,16 @@
           "$ref": "#/components/requestBodies/Task/Edit"
         },
         "responses": {
+          "200": {
+            "description": "Tarefa editada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/Task/Modify/401"
           },
