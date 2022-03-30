@@ -121,6 +121,8 @@
           "401": {
             "$ref": "#/components/responses/Task/401"
           },
+          "404": {
+            "$ref": "#/components/responses/User/404"
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -141,6 +143,9 @@
         "responses": {
           "401": {
             "$ref": "#/components/responses/Task/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/User/404"
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -177,6 +182,9 @@
           "401": {
             "$ref": "#/components/responses/Task/Modify/401"
           },
+          "404": {
+            "$ref": "#/components/responses/Task/Modify/404"
+          },
           "500": {
             "$ref": "#/components/responses/Errors/500"
           }
@@ -209,6 +217,8 @@
           "401": {
             "$ref": "#/components/responses/Task/Modify/401"
           },
+          "404": {
+            "$ref": "#/components/responses/Task/Modify/404"
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -466,6 +476,23 @@
             }
           }
         },
+        "404": {
+          "description": "Usuário não encontrado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "example": "Usuário não encontrado"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "Task": {
         "401": {
           "description": "Erros relacionados a autenticação e autorização do usuário",
@@ -499,32 +526,66 @@
             }
           }
         },
-        "401": {
-            "description": "Erros relacionados a autenticação e autorização do usuário",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "message": {
-                    "type": "string"
+        "Modify": {
+          "404": {
+            "description": "Usuário ou tarefa não encontrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Usuário não encontrado": {
+                    "value": {
+                      "message": "Usuário não encontrado"
+                    }
+                  },
+                  "Tarefa não encontrada": {
+                    "value": {
+                      "message": "Tarefa não encontrada"
+                    }
                   }
                 }
-              },
-              "examples": {
-                "Token inválido": {
-                  "value": {
-                    "message": "Token inválido"
+              }
+            }
+          },
+          "401": {
+            "description": "Erros relacionados a autenticação e autorização do usuário",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
                   }
                 },
-                "Token expirado": {
-                  "value": {
-                    "message": "Token expirado"
-                  }
-                },
-                "Token incorreto": {
-                  "value": {
-                    "message": "Token incorreto"
+                "examples": {
+                  "Token inválido": {
+                    "value": {
+                      "message": "Token inválido"
+                    }
+                  },
+                  "Token expirado": {
+                    "value": {
+                      "message": "Token expirado"
+                    }
+                  },
+                  "Token incorreto": {
+                    "value": {
+                      "message": "Token incorreto"
+                    }
+                  },
+                  "Usuário não autorizado": {
+                    "value": {
+                      "message": "Usuário não autorizado"
+                    }
                   }
                 }
               }
