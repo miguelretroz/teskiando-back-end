@@ -119,7 +119,8 @@
         },
         "responses": {
           "401": {
-            "$ref": "#/components/responses/User/401"
+            "$ref": "#/components/responses/Task/401"
+          },
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -139,7 +140,7 @@
         ],
         "responses": {
           "401": {
-            "$ref": "#/components/responses/User/401"
+            "$ref": "#/components/responses/Task/401"
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -174,7 +175,7 @@
         },
         "responses": {
           "401": {
-            "$ref": "#/components/responses/User/401"
+            "$ref": "#/components/responses/Task/Modify/401"
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -206,7 +207,8 @@
         ],
         "responses": {
           "401": {
-            "$ref": "#/components/responses/User/401"
+            "$ref": "#/components/responses/Task/Modify/401"
+          },
           },
           "500": {
             "$ref": "#/components/responses/Errors/500"
@@ -464,8 +466,41 @@
             }
           }
         },
+      "Task": {
         "401": {
-          "description": "Erros relacionados a autenticação com accessToken",
+          "description": "Erros relacionados a autenticação e autorização do usuário",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Token inválido": {
+                  "value": {
+                    "message": "Token inválido"
+                  }
+                },
+                "Token expirado": {
+                  "value": {
+                    "message": "Token expirado"
+                  }
+                },
+                "Token incorreto": {
+                  "value": {
+                    "message": "Token incorreto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+            "description": "Erros relacionados a autenticação e autorização do usuário",
           "content": {
             "application/json": {
               "schema": {
