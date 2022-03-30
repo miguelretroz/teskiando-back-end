@@ -295,7 +295,7 @@
                 "required": ["title"]
               },
               "examples": {
-                "apenas título": {
+                "Apenas título": {
                   "value": {
                     "title": "Comprar pão"
                   }
@@ -325,32 +325,32 @@
                 }
               },
               "examples": {
-                "apenas título": {
+                "Apenas título": {
                   "value": {
                     "title": "Comprar pão"
                   }
                 },
-                "apenas descrição": {
+                "Apenas descrição": {
                   "value": {
                     "description": "Ir comprar pão na padaria"
                   }
                 },
-                "apenas status para \"A fazer\"": {
+                "Apenas status para \"A fazer\"": {
                   "value": {
                     "status": "toDo"
                   }
                 },
-                "apenas status para \"Em progresso\"": {
+                "Apenas status para \"Em progresso\"": {
                   "value": {
                     "status": "inProgress"
                   }
                 },
-                "apenas status para \"Concluído\"": {
+                "Apenas status para \"Concluído\"": {
                   "value": {
                     "status": "finished"
                   }
                 },
-                "todos os campos": {
+                "Todos os campos": {
                   "value": {
                     "title": "Comprar pão",
                     "description": "Ir comprar pão na padaria",
