@@ -118,6 +118,9 @@
           "$ref": "#/components/requestBodies/Task/Register"
         },
         "responses": {
+          "401": {
+            "$ref": "#/components/responses/User/401"
+          },
           "500": {
             "$ref": "#/components/responses/Errors/500"
           }
@@ -135,6 +138,9 @@
           }
         ],
         "responses": {
+          "401": {
+            "$ref": "#/components/responses/User/401"
+          },
           "500": {
             "$ref": "#/components/responses/Errors/500"
           }
@@ -167,6 +173,9 @@
           "$ref": "#/components/requestBodies/Task/Edit"
         },
         "responses": {
+          "401": {
+            "$ref": "#/components/responses/User/401"
+          },
           "500": {
             "$ref": "#/components/responses/Errors/500"
           }
@@ -196,6 +205,9 @@
           }
         ],
         "responses": {
+          "401": {
+            "$ref": "#/components/responses/User/401"
+          },
           "500": {
             "$ref": "#/components/responses/Errors/500"
           }
@@ -446,6 +458,38 @@
                         "Senha deve ser \"string\""
                       ]
                     }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Erros relacionados a autenticação com accessToken",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Token inválido": {
+                  "value": {
+                    "message": "Token inválido"
+                  }
+                },
+                "Token expirado": {
+                  "value": {
+                    "message": "Token expirado"
+                  }
+                },
+                "Token incorreto": {
+                  "value": {
+                    "message": "Token incorreto"
                   }
                 }
               }
