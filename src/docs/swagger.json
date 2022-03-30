@@ -151,6 +151,19 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Lista de tarefas do usuário",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/Task/401"
           },
