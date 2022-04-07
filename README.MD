@@ -6,11 +6,10 @@ As tasks (tarefas) são organizadas baseadas em status (estado), que permitem ao
 
 Este é o repositório do código de back-end do projeto, que contém a toda a lógica de negócio.
 
-> No link abaixo é possível acessar o repositório do código de front-end do projeto
+> Através do card abaixo é possível acessar o repositório do código de front-end do projeto
 
 <a href="https://github.com/MiguelRetroz/teskiando-front-end">
-  <img alt="Front-end icon" align="center" src="./src/public/readme/front-end-icon.svg" height="30">
-    - Front-end
+  <img alt="repo card teskiando front-end" align="center" src="./src/public/readme/repo-card-teskiando-front-end.svg">
 </a>
 
 ## 🛠️ Construído com
